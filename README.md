@@ -4,7 +4,26 @@
 
 ## Environment Setup
 
-I setup the environment using anaconda. Here is my environment: 
+### Docker
+
+Build the docker image with the Dockerfile at the root directory. 
+
+```bash
+docker build -t matmul_example:v1.0 .
+```
+
+The code is copied to `/workspace`.
+
+To launch the instance, use 
+
+```bash
+docker run -it --gpus all matmul_example:v1.0
+cd /workspace
+```
+
+and then proceed to compilation. 
+
+### Anaconda
 
 - CUDA 12.1 installed in the system or by conda
 - CMake == 3.31.4
